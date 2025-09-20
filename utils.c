@@ -55,21 +55,20 @@ Categoria stringParaCategoria(char *categoria){
 }
 
 //função para exibir todos os alimentos do vetor
-void mostrarAlimentos(Alimento vetorAlimentos[], int tamanho){
-    if(qntAlimentos != TOTAL_ALIMENTOS) return;
-    for(int i = 0; i < qntAlimentos; i++ ){
-        Alimento a = vetorAlimentos[i];
+void mostrarAlimentos(Alimento vetor[], int tamanho){
+    if(qntAlimentos < tamanho) return;
+    for(int i = 0; i < tamanho; i++){
+        Alimento a = vetor[i];
         printf("Numero: %d\n Descricao: %s\n Umidade: %.2f\n Energia(kcal): %d\n Proteina(g): %.2f\n Carboidratos(g): %.2f\n Categoria: %s\n ============= \n", 
             a.numero, a.descricao, a.umidade, a.energia, a.proteina, a.carboidrato, categoriasString[a.categoria]);
     }
 }
 
-//função para mostrar alimentos de acordo com um índice, ou seja, de acordo com condições específicas
-void mostrarAlimentoPorIndice(Alimento vetor[], int indice){
-    Alimento a = vetor[indice];
+void mostrarAlimento(Alimento a){
     printf("Numero: %d\n Descricao: %s\n Umidade: %.2f\n Energia(kcal): %d\n Proteina(g): %.2f\n Carboidratos(g): %.2f\n Categoria: %s\n ============= \n", 
-    a.numero, a.descricao, a.umidade, a.energia, a.proteina, a.carboidrato, categoriasString[a.categoria]); 
-}
+        a.numero, a.descricao, a.umidade, a.energia, a.proteina, a.carboidrato, categoriasString[a.categoria]);
+    }
+
 
 //função utilitária para verificar uma categoria
 int verificarCategoria(Categoria c){
@@ -91,39 +90,58 @@ void listarCategorias(){
     }
 }
 
-void listarAlimentoOrdemCrescentePorDescricao(Categoria c){
-    if(verificarCategoria(c) == 0 || qntAlimentos <= 0) return;
+//função para armazenar os alimentos de uma categoria X fornecida e exibir esses alimentos em ordem alfabética pelo campo "descrição"
+void listarAlimentoOrdemCrescentePorDescricao(Categoria categoriaSelecionada) {
+    if (!verificarCategoria(categoriaSelecionada) || qntAlimentos <= 0) return;
 
-    //contador para a quantidade de alimentos da categoria fornecida
-    int tamanho = 0;
+    //vetores dinâmicos
+    Alimento* alimentosFiltrados = NULL;
+    int* letrasUnicas = NULL;
 
-    //vetor para armazenar alimentos da categoria X fornecida e um vetor de INT para o 1º caractere do campo "descricao" de cada alimento usando integer promotion (char → int por conta da tabela ASCII)
-    Alimento* alimentosCategoriaX = NULL;
-    int* vetorPrimeiroCharDescricao = NULL;
+    int totalAlimentos = 0;
+    int totalLetras = 0;
 
-    for(int i = 0; i < qntAlimentos; i++){
-        if(vetorAlimentos[i].categoria == c){
-            tamanho++; 
+    //filtra alimentos da categoria fornecida e coleta letras únicas
+    for (int i = 0; i < qntAlimentos; i++) {
+        if (vetorAlimentos[i].categoria == categoriaSelecionada) {
 
-            //usando realloc para redimensionar o tamanho dos vetores definidos antes conforme o loop
-            alimentosCategoriaX = (Alimento*) realloc(alimentosCategoriaX, tamanho * (sizeof(Alimento)));
-            vetorPrimeiroCharDescricao = (int*) realloc(vetorPrimeiroCharDescricao, tamanho * sizeof(int));
+            //adiciona alimento ao vetor filtrado
+            totalAlimentos++;
+            alimentosFiltrados = realloc(alimentosFiltrados, totalAlimentos * sizeof(Alimento));
+            alimentosFiltrados[totalAlimentos - 1] = vetorAlimentos[i];
 
-            //inserindo os dados nos vetores
-            alimentosCategoriaX[tamanho - 1] = vetorAlimentos[i];
-            vetorPrimeiroCharDescricao[tamanho - 1] = vetorAlimentos[i].descricao[0];
-        }
-    }
-
-    //passando o vetor dos caracteres (em forma de int) para uma função de ordenação
-    int* vetorCharOrdenado = ordenarVetor(vetorPrimeiroCharDescricao, tamanho);
-
-    //comparando cada char do vetor de char (ordenado) com a primeira letra do campo descricao de cada alimento selecionado de acordo com sua categoria, exibindo os alimentos em ordem alfabética
-    for(int i = 0; i < tamanho; i++){
-        for(int j = 0; j < tamanho; j++){
-            if(vetorCharOrdenado[i] == alimentosCategoriaX[j].descricao[0]){
-                mostrarAlimentoPorIndice(alimentosCategoriaX, j);
+            //verifica se a letra já foi registrada
+            char letraAtual = vetorAlimentos[i].descricao[0];
+            int jaExiste = 0;
+            for (int j = 0; j < totalLetras; j++) {
+                if (letrasUnicas[j] == letraAtual) {
+                    jaExiste = 1;
+                    break;
+                }
+            }
+            if (!jaExiste) {
+                totalLetras++;
+                letrasUnicas = realloc(letrasUnicas, totalLetras * sizeof(int));
+                letrasUnicas[totalLetras - 1] = letraAtual;
             }
         }
     }
+
+    //chamada da função para ordenação das letras
+    int* letrasOrdenadas = ordenarVetor(letrasUnicas, totalLetras);
+
+    //exibe alimentos em ordem alfabética pela descrição
+    for (int i = 0; i < totalLetras; i++) {
+        for (int j = 0; j < totalAlimentos; j++) {
+            if (alimentosFiltrados[j].descricao[0] == letrasOrdenadas[i]) {
+                mostrarAlimento(alimentosFiltrados[j]);
+            }
+        }
+    }
+
+    //liberação de memória dos vetores alocados
+    free(alimentosFiltrados);
+    free(letrasUnicas);
+    free(letrasOrdenadas);
 }
+

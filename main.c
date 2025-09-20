@@ -69,6 +69,6 @@ int main(){
     }
 
     //testes
-    listarAlimentoOrdemCrescentePorDescricao(BEBIDAS);
+    listarAlimentoOrdemCrescentePorDescricao(CARNES);
     return 0;
 }
