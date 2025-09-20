@@ -68,10 +68,7 @@ int main(){
         }
     }
 
-
     //testes
-    mostrarAlimentos(vetorAlimentos, qntAlimentos);
-    listarCategorias();
-    listarAlimentoPorCategoria(BEBIDAS);
+    listarAlimentoOrdemCrescentePorDescricao(BEBIDAS);
     return 0;
 }
