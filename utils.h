@@ -3,8 +3,11 @@
 #include "alimento.h"
 
 void mostrarAlimentos(Alimento vetor[], int tamanho);
+void mostrarAlimento(Alimento a);
 void listarCategorias();
+Alimento* gerarVetorPorCategoria(Categoria c, int* tamanho);
 void listarAlimentosOrdemAlfabetica(Categoria c);
+void listarAlimentosPorEnergia(Categoria c);
 extern int qntAlimentos;
 extern Alimento vetorAlimentos[];
 Categoria stringParaCategoria(char *texto);

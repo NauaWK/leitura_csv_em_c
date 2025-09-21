@@ -67,8 +67,7 @@ void mostrarAlimentos(Alimento vetor[], int tamanho){
 void mostrarAlimento(Alimento a){
     printf("Numero: %d\n Descricao: %s\n Umidade: %.2f\n Energia(kcal): %d\n Proteina(g): %.2f\n Carboidratos(g): %.2f\n Categoria: %s\n ============= \n", 
         a.numero, a.descricao, a.umidade, a.energia, a.proteina, a.carboidrato, categoriasString[a.categoria]);
-    }
-
+}
 
 //função utilitária para verificar uma categoria
 int verificarCategoria(Categoria c){
@@ -90,23 +89,35 @@ void listarCategorias(){
     }
 }
 
+
+//função que gera vetores de alimentos com base em uma categoria X, recebe também o endereço de uma variável externa "tamanho" para outros fins
+Alimento* gerarVetorPorCategoria(Categoria c, int* tamanho){
+    if (!verificarCategoria(c) || qntAlimentos <= 0) return NULL;
+
+    //vetor de alimentos dinâmico para ser populado com alimentos da categoria X fornecida pelo usuário
+    Alimento* alimentosFiltrados = NULL;
+    *tamanho = 0;
+
+    //filtra alimentos da categoria fornecida e insere no vetor, realocando memória com realloc
+    for (int i = 0; i < qntAlimentos; i++) {
+        if (vetorAlimentos[i].categoria == c) {
+            (*tamanho)++;
+            alimentosFiltrados = realloc(alimentosFiltrados, *tamanho * sizeof(Alimento));
+            alimentosFiltrados[*tamanho - 1] = vetorAlimentos[i];
+        }
+    }
+    
+    return alimentosFiltrados;
+
+}
+
 //função para armazenar os alimentos de uma categoria X fornecida e exibir esses alimentos em ordem alfabética pelo campo "descrição"
 void listarAlimentosOrdemAlfabetica (Categoria categoriaSelecionada) {  
     if (!verificarCategoria(categoriaSelecionada) || qntAlimentos <= 0) return;
 
-    //vetor dinâmico
-    Alimento* alimentosFiltrados = NULL;
-    int totalAlimentosCategoriaX = 0;
+    int totalAlimentosCategoriaX;
+    Alimento* alimentosFiltrados = gerarVetorPorCategoria(categoriaSelecionada, &totalAlimentosCategoriaX);
 
-    //filtra alimentos da categoria fornecida
-    for (int i = 0; i < qntAlimentos; i++) {
-        if (vetorAlimentos[i].categoria == categoriaSelecionada) {
-            totalAlimentosCategoriaX++;
-            alimentosFiltrados = realloc(alimentosFiltrados, totalAlimentosCategoriaX * sizeof(Alimento));
-            alimentosFiltrados[totalAlimentosCategoriaX - 1] = vetorAlimentos[i];
-        }
-    }
-    
     ordenarAlimentosPorDescricao(alimentosFiltrados, totalAlimentosCategoriaX);
 
     //exibe alimentos
@@ -116,4 +127,22 @@ void listarAlimentosOrdemAlfabetica (Categoria categoriaSelecionada) {
     //liberação de memória do vetor alocado
     free(alimentosFiltrados);
 }
+
+void listarAlimentosPorEnergia(Categoria categoriaSelecionada){
+    if (!verificarCategoria(categoriaSelecionada) || qntAlimentos <= 0) return;
+
+    int totalAlimentosCategoriaX;
+    Alimento* alimentosFiltrados = gerarVetorPorCategoria(categoriaSelecionada, &totalAlimentosCategoriaX);
+
+    ordenarAlimentosPorEnergia(alimentosFiltrados, totalAlimentosCategoriaX);
+
+    //exibindo os alimentos em ordem decrescente
+    for(int i = totalAlimentosCategoriaX - 1; i >= 0; i--){
+        mostrarAlimento(alimentosFiltrados[i]);
+    }
+
+    free(alimentosFiltrados);
+
+}
+
 

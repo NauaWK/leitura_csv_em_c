@@ -69,7 +69,7 @@ int main(){
     }
 
     //testes
-    listarAlimentosOrdemAlfabetica(GORDURAS);
+    listarAlimentosPorEnergia(LATICINIOS);
 
     return 0;
 }
