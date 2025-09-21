@@ -1,101 +1,101 @@
 Numero,Descricao,Umidade(%),Energia(Kcal),Proteina(g),Carboidrato(g),Categoria
-1,Arroz integral cozido,65.0,111,2.6,23.0,Cereais
-2,Farinha de trigo,12.0,360,10.0,75.0,Cereais
-3,Pao frances,38.0,300,8.0,55.0,Cereais
-4,Milho verde cru,70.0,108,3.3,19.0,Cereais
-5,Flocos de milho,5.0,370,7.0,84.0,Cereais
-6,Feijao carioca cozido,72.0,76,4.8,13.6,Leguminosas
-7,Lentilha cozida,70.0,93,7.6,16.0,Leguminosas
-8,Grao-de-bico cozido,60.0,164,8.9,27.4,Leguminosas
-9,Soja cozida,60.0,170,16.0,15.0,Leguminosas
-10,Feijao preto cru,12.0,340,21.0,62.0,Leguminosas
-11,Batata inglesa cozida,75.0,80,1.8,18.0,Tuberculos
-12,Mandioca cozida,60.0,151,1.0,36.0,Tuberculos
-13,Inhame cozido,70.0,98,1.5,23.0,Tuberculos
-14,Cara cozido,68.0,96,1.3,22.0,Tuberculos
-15,Batata doce cozida,65.0,118,1.6,28.0,Tuberculos
-16,Banana prata crua,75.0,89,1.0,22.0,Frutas
-17,Maca crua,85.0,57,0.2,15.0,Frutas
-18,Mamao papaia cru,88.0,45,0.5,11.0,Frutas
-19,Abacaxi cru,86.0,48,0.4,12.3,Frutas
-20,Manga crua,83.0,60,0.6,15.0,Frutas
-21,Alface americana crua,95.0,13,1.0,2.0,Vegetais
-22,Cenoura crua,88.0,34,1.3,8.0,Vegetais
-23,Tomate cru,94.0,19,0.9,4.2,Vegetais
-24,Couve manteiga crua,91.0,27,2.9,4.3,Vegetais
-25,Espinafre cru,92.0,22,2.2,3.0,Vegetais
-26,Frango assado,60.0,239,27.0,0.0,Carnes
-27,Carne bovina moida cozida,55.0,250,26.0,0.0,Carnes
-28,Carne suina assada,50.0,290,24.0,0.0,Carnes
-29,Figado bovino cozido,65.0,135,20.0,3.0,Carnes
-30,Peito de frango grelhado,65.0,165,31.0,0.0,Carnes
-31,Leite integral,87.0,61,3.2,4.7,Laticinios
-32,Leite desnatado,90.0,36,3.4,5.0,Laticinios
-33,Queijo prato,40.0,350,25.0,2.0,Laticinios
-34,Iogurte natural integral,85.0,60,3.5,4.0,Laticinios
-35,Requeijao cremoso,55.0,250,5.0,3.0,Laticinios
-36,Ovo de galinha cru,75.0,143,13.0,1.1,Ovos
-37,Ovo cozido,70.0,155,13.0,1.0,Ovos
-38,Ovo frito,65.0,180,14.0,1.0,Ovos
-39,Clara de ovo,88.0,17,3.6,0.3,Ovos
-40,Gema de ovo,50.0,350,16.0,1.0,Ovos
-41,Azeite de oliva,0.0,884,0.0,0.0,Gorduras
-42,Oleo de soja,0.0,884,0.0,0.0,Gorduras
-43,Manteiga com sal,15.0,720,0.5,0.5,Gorduras
-44,Margarina com sal,16.0,720,0.5,0.5,Gorduras
-45,Banha de porco,0.0,900,0.0,0.0,Gorduras
-46,Refrigerante cola,90.0,40,0.0,10.0,Bebidas
-47,Suco de laranja natural,88.0,45,0.7,10.0,Bebidas
-48,Cerveja clara,92.0,43,0.5,3.0,Bebidas
-49,Vinho tinto seco,85.0,70,0.1,2.0,Bebidas
-50,Agua de coco natural,95.0,22,0.2,5.3,Bebidas
-51,Biscoito agua e sal,5.0,430,7.0,70.0,Industrializados
-52,Biscoito recheado chocolate,3.0,500,5.0,75.0,Industrializados
-53,Salsicha,60.0,280,12.0,2.0,Industrializados
-54,Presunto,65.0,120,15.0,1.0,Industrializados
-55,Mortadela,60.0,300,12.0,3.0,Industrializados
-56,Acucar refinado,0.0,387,0.0,100.0,Doces
-57,Mel,17.0,310,0.3,82.0,Doces
-58,Chocolate ao leite,2.0,540,7.0,60.0,Doces
-59,Bala dura,1.0,390,0.0,98.0,Doces
-60,Doce de leite,30.0,320,5.0,60.0,Doces
-61,Castanha-do-para,5.0,650,14.0,12.0,Oleaginosas
-62,Amendoim torrado,2.0,580,25.0,21.0,Oleaginosas
-63,Nozes,4.0,620,15.0,14.0,Oleaginosas
-64,Avela,3.0,628,14.0,17.0,Oleaginosas
-65,Amendoas,5.0,580,21.0,20.0,Oleaginosas
-66,Sardinha em conserva,60.0,200,25.0,0.0,Pescados
-67,Atum em conserva,65.0,190,26.0,0.0,Pescados
-68,File de merluza grelhado,70.0,120,22.0,0.0,Pescados
-69,Camarao cozido,75.0,99,20.0,0.0,Pescados
-70,Bacalhau dessalgado,60.0,105,23.0,0.0,Pescados
-71,Suplemento proteico (whey),5.0,400,80.0,10.0,Suplementos
-72,Barra de proteina,10.0,350,30.0,25.0,Suplementos
-73,Shake proteico,85.0,120,20.0,10.0,Suplementos
-74,Creatina em po,0.0,0,0.0,0.0,Suplementos
-75,Albumina em po,5.0,380,80.0,5.0,Suplementos
-76,Abobrinha crua,94.0,15,1.2,3.0,Vegetais
-77,Berinjela crua,93.0,20,1.0,4.0,Vegetais
-78,Pimentao verde cru,92.0,20,0.9,4.0,Vegetais
-79,Repolho cru,92.0,22,1.3,5.2,Vegetais
-80,Melancia crua,91.0,30,0.6,7.5,Frutas
-81,Limao tahiti cru,89.0,25,0.5,6.0,Frutas
-82,Kiwi cru,83.0,51,1.0,11.0,Frutas
-83,Uva crua,81.0,57,0.6,15.0,Frutas
-84,Maracuja cru,73.0,68,1.0,13.0,Frutas
-85,Almeirao cru,93.0,20,1.5,3.0,Vegetais
-86,Rucula crua,92.0,17,2.3,2.0,Vegetais
-87,Nabo cru,91.0,18,0.6,4.0,Vegetais
-88,Peito de peru defumado,60.0,110,18.0,1.0,Carnes
-89,Costela bovina assada,55.0,320,22.0,0.0,Carnes
-90,Chocolate meio amargo,2.0,520,6.0,50.0,Doces
-91,Goiabada,30.0,280,0.5,75.0,Doces
-92,Pudim de leite,45.0,150,4.0,25.0,Doces
-93,Biscoito tipo maisena,4.0,430,6.0,72.0,Industrializados
-94,Macarrao instantaneo cru,10.0,470,10.0,65.0,Industrializados
-95,Hamburguer bovino congelado,55.0,250,15.0,5.0,Industrializados
-96,Barra energetica,12.0,380,10.0,60.0,Suplementos
-97,Suplemento de colageno,5.0,350,85.0,2.0,Suplementos
-98,Semente de girassol,6.0,580,20.0,18.0,Oleaginosas
-99,Castanha de caju,5.0,570,18.0,30.0,Oleaginosas
-100,Pistache,4.0,560,20.0,28.0,Oleaginosas
+1,Arroz branco cozido,65.0,130,2.5,28.0,Cereais
+2,Pao frances,38.0,300,8.0,55.0,Cereais
+3,Farinha de trigo,12.0,360,10.0,75.0,Cereais
+4,Milho verde cru,76.0,96,3.3,18.7,Cereais
+5,Biscoito Agua e sal,5.0,430,7.5,72.0,Cereais
+6,Arroz integral cozido,68.0,111,2.6,23.0,Cereais
+7,Macarrao cozido,60.0,158,5.8,30.0,Cereais
+8,Farinha de milho,10.0,350,7.0,73.0,Cereais
+9,Cereal matinal,5.0,380,6.5,80.0,Cereais
+10,Torrada integral,8.0,390,9.0,70.0,Cereais
+11,Maca com casca crua,84.0,52,0.3,13.8,Frutas
+12,Banana prata crua,75.0,89,1.0,22.8,Frutas
+13,Mamao papaia cru,88.0,40,0.9,10.4,Frutas
+14,Melancia crua,92.0,30,0.6,7.5,Frutas
+15,Uva rubi crua,81.0,70,0.7,17.1,Frutas
+16,Abacaxi cru,86.0,48,0.4,12.3,Frutas
+17,Laranja com casca,87.0,51,0.9,11.8,Frutas
+18,Manga crua,83.0,60,0.6,15.0,Frutas
+19,Pera crua,85.0,58,0.4,15.5,Frutas
+20,Kiwi cru,84.0,61,1.1,14.7,Frutas
+21,Alface americana crua,95.6,15,1.2,2.9,Verduras
+22,Tomate cru,94.0,19,0.9,4.2,Verduras
+23,Cenoura crua,88.0,40,1.0,9.3,Verduras
+24,Brocolis cozido,90.0,35,2.4,7.2,Verduras
+25,Espinafre cru,92.0,22,2.9,3.6,Verduras
+26,Pimentao verde cru,92.0,20,0.9,4.7,Verduras
+27,Repolho cru,93.0,25,1.3,5.4,Verduras
+28,Batata inglesa cozida,77.0,86,1.8,20.1,Verduras
+29,Abobrinha cozida,94.0,19,1.1,3.2,Verduras
+30,Chuchu cozido,95.0,16,0.6,3.4,Verduras
+31,Azeite de oliva,0.0,884,0.0,0.0,Gorduras
+32,Margarina com sal,16.0,717,0.2,0.5,Gorduras
+33,Manteiga sem sal,13.6,758,0.4,0.0,Gorduras
+34,Oleo de soja,0.0,884,0.0,0.0,Gorduras
+35,Oleo de milho,0.0,884,0.0,0.0,Gorduras
+36,Salmao grelhado,64.0,206,22.1,0.0,Pescados
+37,Atum em conserva,59.0,198,26.2,0.0,Pescados
+38,Lula cozida,79.0,92,15.6,1.5,Pescados
+39,Camarao cozido,75.0,99,20.3,0.2,Pescados
+40,Sardinha frita,60.0,208,25.0,0.0,Pescados
+41,Carne bovina moida cozida,60.0,250,26.0,0.0,Carnes
+42,Frango assado sem pele,65.0,239,27.3,0.0,Carnes
+43,Carne suina cozida,62.0,270,24.5,0.0,Carnes
+44,Linguica frita,55.0,320,15.0,0.5,Carnes
+45,Presunto cozido,70.0,130,18.0,1.0,Carnes
+46,Carne de panela com batata,65.0,230,20.0,10.0,Carnes
+47,Frango com quiabo,66.0,200,18.0,5.0,Carnes
+48,Estrogonofe de carne,65.0,220,19.0,6.0,Carnes
+49,Quibe assado,60.0,220,14.0,18.0,Carnes
+50,Escondidinho de carne,62.0,230,15.0,20.0,Carnes
+51,Leite integral,87.0,61,3.2,4.8,Leite
+52,Leite desnatado,90.0,36,3.3,5.0,Leite
+53,Iogurte natural integral,85.0,61,3.5,4.7,Leite
+54,Queijo prato,40.0,350,25.0,2.0,Leite
+55,Requeijao cremoso,55.0,257,6.0,3.5,Leite
+56,Queijo minas frescal,60.0,270,18.0,1.5,Leite
+57,Leite condensado,27.0,321,7.0,56.0,Leite
+58,Creme de leite,60.0,210,2.0,3.0,Leite
+59,Queijo mucarela,45.0,330,22.0,2.5,Leite
+60,Iogurte com frutas,80.0,90,3.0,15.0,Leite
+61,Cerveja clara,93.0,43,0.5,3.2,Bebidas
+62,Vinho tinto seco,88.0,85,0.1,2.6,Bebidas
+63,Refrigerante cola,89.0,39,0.0,10.3,Bebidas
+64,Suco de laranja natural,88.0,45,0.7,10.0,Bebidas
+65,Agua de coco natural,94.0,22,0.2,5.3,Bebidas
+66,Ovo de galinha cozido,75.0,155,13.0,1.1,Ovos
+67,Ovo mexido,72.0,170,12.5,1.5,Ovos
+68,Omelete simples,70.0,180,13.2,2.0,Ovos
+69,Ovo frito,68.0,190,14.0,1.0,Ovos
+70,Ovo de codorna cozido,74.0,158,13.1,0.6,Ovos
+71,Chocolate ao leite,2.0,535,7.0,59.0,Acucarados
+72,Bala de goma,5.0,380,0.0,95.0,Acucarados
+73,Doce de leite,30.0,315,5.0,55.0,Acucarados
+74,Goiabada,25.0,280,0.5,75.0,Acucarados
+75,Mel,17.0,310,0.3,82.4,Acucarados
+76,Feijao carioca cozido,70.0,76,4.8,13.6,Leguminosas
+77,Lentilha cozida,69.0,91,7.3,16.0,Leguminosas
+78,Grao-de-bico cozido,67.0,120,8.9,20.0,Leguminosas
+79,Soja cozida,63.0,140,12.0,15.0,Leguminosas
+80,Ervilha seca cozida,72.0,80,5.5,14.2,Leguminosas
+81,Castanha-do-para,4.0,656,14.3,12.3,Nozes
+82,Amendoim torrado,5.0,580,25.8,21.3,Nozes
+83,Nozes comuns,4.5,620,15.2,13.7,Nozes
+84,Semente de girassol,6.0,584,20.8,20.0,Nozes
+85,Gergelim,5.0,573,17.7,23.4,Nozes
+86,Sal de cozinha,0.0,0,0.0,0.0,Miscelaneas
+87,Acucar refinado,0.0,387,0.0,99.8,Miscelaneas
+88,Vinagre de Alcool,94.0,4,0.0,0.2,Miscelaneas
+89,Maionese tradicional,45.0,680,1.0,0.5,Miscelaneas
+90,Mostarda,85.0,66,1.2,5.8,Miscelaneas
+91,Salsicha cozida,60.0,290,12.0,2.0,Industrializados
+92,Nuggets de frango,55.0,310,15.0,12.0,Industrializados
+93,Hamburguer bovino congelado,58.0,280,17.0,3.0,Industrializados
+94,Lasanha congelada,65.0,190,8.0,22.0,Industrializados
+95,Batata frita congelada,50.0,312,3.5,35.0,Industrializados
+96,Arroz carreteiro,68.0,150,6.0,20.0,Preparados
+97,Feijoada,70.0,180,12.0,15.0,Preparados
+98,Macarronada com molho,72.0,140,5.0,22.0,Preparados
+99,Pao de queijo assado,45.0,330,6.0,28.0,Preparados
+100,Cuscuz nordestino,60.0,150,3.0,30.0,Preparados

@@ -8,7 +8,7 @@ void ordenarVetor(int* vetor, int tamanho){
     for(int i = 0; i < tamanho - 1; i++){
         //loop interno para verificar cada par de valores adjacentes
         for(int j = 0; j < tamanho - i - 1; j++){
-            //verifica se valor esquerdo > direito
+            //essa condição verifica se valor esquerdo > direito
             if(vetor[j] > vetor[j + 1]){
                 //inversão de valores             
                 int temp = vetor[j];
@@ -37,7 +37,6 @@ void ordenarAlimentosPorEnergia(Alimento* vetor, int tamanho) {
     for (int i = 0; i < tamanho - 1; i++) {
         for (int j = 0; j < tamanho - i - 1; j++) {
             if (vetor[j].energia > vetor[j + 1].energia) {
-                // troca os elementos
                 Alimento temp = vetor[j];
                 vetor[j] = vetor[j + 1];
                 vetor[j + 1] = temp;

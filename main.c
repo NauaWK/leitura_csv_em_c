@@ -69,7 +69,7 @@ int main(){
     }
 
     //testes
-    listarAlimentosPorEnergia(LATICINIOS);
+    listarAlimentosPorEnergia(CARNES);
 
     return 0;
 }

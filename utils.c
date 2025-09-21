@@ -9,38 +9,38 @@
 //array com as categorias do enum em formato de string para associação dos dados que vem do csv (em texto) para seu enum correspondente
 const char* categoriasString[TOTAL_CATEGORIAS] = {
     "Cereais",
-    "Leguminosas",
-    "Tuberculos",
+    "Verduras",
     "Frutas",
-    "Vegetais",
-    "Carnes",
-    "Laticinios",
-    "Ovos",
     "Gorduras",
-    "Bebidas",
-    "Industrializados",
-    "Doces",
-    "Oleaginosas",
     "Pescados",
-    "Suplementos"
+    "Carnes",
+    "Leite",
+    "Bebidas",
+    "Ovos",
+    "Acucarados",
+    "Miscelaneas",
+    "Industrializados",
+    "Preparados",
+    "Leguminosas",
+    "Nozes"
 };
 
 const Categoria todasAsCategoriasEnum[] = {
     CEREAIS,
-    LEGUMINOSAS,
-    TUBERCULOS,
+    VERDURAS,
     FRUTAS,
-    VEGETAIS,
-    CARNES,
-    LATICINIOS,
-    OVOS,
     GORDURAS,
-    BEBIDAS,
-    INDUSTRIALIZADOS,
-    DOCES,
-    OLEAGINOSAS,
     PESCADOS,
-    SUPLEMENTOS,
+    CARNES,
+    LEITE,
+    BEBIDAS,
+    OVOS,
+    ACUCARADOS,
+    MISCELANEAS,
+    INDUSTRIALIZADOS,
+    PREPARADOS,
+    LEGUMINOSAS,
+    NOZES
 };
 
 //função para converter string Categoria → enum Categoria
@@ -89,7 +89,6 @@ void listarCategorias(){
     }
 }
 
-
 //função que gera vetores de alimentos com base em uma categoria X, recebe também o endereço de uma variável externa "tamanho" para outros fins
 Alimento* gerarVetorPorCategoria(Categoria c, int* tamanho){
     if (!verificarCategoria(c) || qntAlimentos <= 0) return NULL;
@@ -105,10 +104,8 @@ Alimento* gerarVetorPorCategoria(Categoria c, int* tamanho){
             alimentosFiltrados = realloc(alimentosFiltrados, *tamanho * sizeof(Alimento));
             alimentosFiltrados[*tamanho - 1] = vetorAlimentos[i];
         }
-    }
-    
+    }  
     return alimentosFiltrados;
-
 }
 
 //função para armazenar os alimentos de uma categoria X fornecida e exibir esses alimentos em ordem alfabética pelo campo "descrição"
@@ -140,9 +137,7 @@ void listarAlimentosPorEnergia(Categoria categoriaSelecionada){
     for(int i = totalAlimentosCategoriaX - 1; i >= 0; i--){
         mostrarAlimento(alimentosFiltrados[i]);
     }
-
     free(alimentosFiltrados);
-
 }
 
 

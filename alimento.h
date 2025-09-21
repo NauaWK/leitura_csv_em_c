@@ -4,20 +4,20 @@
 //enum para as categorias dos alimentos selecionados
 typedef enum {
     CEREAIS,
-    LEGUMINOSAS,
-    TUBERCULOS,
+    VERDURAS,
     FRUTAS,
-    VEGETAIS,
-    CARNES,
-    LATICINIOS,
-    OVOS,
     GORDURAS,
-    BEBIDAS,
-    INDUSTRIALIZADOS,
-    DOCES,
-    OLEAGINOSAS,
     PESCADOS,
-    SUPLEMENTOS,
+    CARNES,
+    LEITE,
+    BEBIDAS,
+    OVOS,
+    ACUCARADOS,
+    MISCELANEAS,
+    INDUSTRIALIZADOS,
+    PREPARADOS,
+    LEGUMINOSAS,
+    NOZES
 } Categoria;
 
 //definição da estrutura de um Alimento
