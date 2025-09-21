@@ -69,7 +69,9 @@ int main(){
     }
 
     //testes
-    listarAlimentosPorEnergia(CARNES);
+    listarAlimentosOrdemAlfabetica(VERDURAS);
+    printf("=================================================");
+    listarAlimentosPorEnergia(OVOS);
 
     return 0;
 }

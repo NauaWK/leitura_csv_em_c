@@ -54,14 +54,27 @@ Categoria stringParaCategoria(char *categoria){
     return -1;
 }
 
-//função para exibir todos os alimentos do vetor
-void mostrarAlimentos(Alimento vetor[], int tamanho){
-    if(qntAlimentos < tamanho) return;
-    for(int i = 0; i < tamanho; i++){
-        Alimento a = vetor[i];
-        printf("Numero: %d\n Descricao: %s\n Umidade: %.2f\n Energia(kcal): %d\n Proteina(g): %.2f\n Carboidratos(g): %.2f\n Categoria: %s\n ============= \n", 
-            a.numero, a.descricao, a.umidade, a.energia, a.proteina, a.carboidrato, categoriasString[a.categoria]);
+//função para exibir alimentos de um vetor, com um parâmetro "ordem" para decidir se imprime em ordem crescente/decrescente
+void mostrarAlimentos(Alimento vetor[], int tamanho, int ordem){
+    if(qntAlimentos < tamanho || ordem > 1 || ordem < 0) return;
+
+    //ordem crescente se "ordem" == 1
+    if(ordem == 1){
+        for(int i = 0; i < tamanho; i++){
+            Alimento a = vetor[i];
+            printf("Numero: %d\n Descricao: %s\n Umidade: %.2f\n Energia(kcal): %d\n Proteina(g): %.2f\n Carboidratos(g): %.2f\n Categoria: %s\n ============= \n", 
+                a.numero, a.descricao, a.umidade, a.energia, a.proteina, a.carboidrato, categoriasString[a.categoria]);
+        }
     }
+    else{
+        //ordem decrescente se "ordem" == 0
+        for(int i = tamanho - 1; i >= 0; i--){
+            Alimento a = vetor[i];
+            printf("Numero: %d\n Descricao: %s\n Umidade: %.2f\n Energia(kcal): %d\n Proteina(g): %.2f\n Carboidratos(g): %.2f\n Categoria: %s\n ============= \n", 
+                a.numero, a.descricao, a.umidade, a.energia, a.proteina, a.carboidrato, categoriasString[a.categoria]);
+        }
+    }
+
 }
 
 void mostrarAlimento(Alimento a){
@@ -115,12 +128,10 @@ void listarAlimentosOrdemAlfabetica (Categoria categoriaSelecionada) {
     int totalAlimentosCategoriaX;
     Alimento* alimentosFiltrados = gerarVetorPorCategoria(categoriaSelecionada, &totalAlimentosCategoriaX);
 
-    ordenarAlimentosPorDescricao(alimentosFiltrados, totalAlimentosCategoriaX);
+    ordenarAlimentos(alimentosFiltrados, totalAlimentosCategoriaX, compararPorDescricao);
 
-    //exibe alimentos
-    for (int i = 0; i < totalAlimentosCategoriaX; i++) {
-        mostrarAlimento(alimentosFiltrados[i]);
-    }
+    mostrarAlimentos(alimentosFiltrados, totalAlimentosCategoriaX, 1);
+
     //liberação de memória do vetor alocado
     free(alimentosFiltrados);
 }
@@ -131,12 +142,10 @@ void listarAlimentosPorEnergia(Categoria categoriaSelecionada){
     int totalAlimentosCategoriaX;
     Alimento* alimentosFiltrados = gerarVetorPorCategoria(categoriaSelecionada, &totalAlimentosCategoriaX);
 
-    ordenarAlimentosPorEnergia(alimentosFiltrados, totalAlimentosCategoriaX);
+    ordenarAlimentos(alimentosFiltrados, totalAlimentosCategoriaX, compararPorEnergia);
 
-    //exibindo os alimentos em ordem decrescente
-    for(int i = totalAlimentosCategoriaX - 1; i >= 0; i--){
-        mostrarAlimento(alimentosFiltrados[i]);
-    }
+    mostrarAlimentos(alimentosFiltrados, totalAlimentosCategoriaX, 0);
+
     free(alimentosFiltrados);
 }
 

@@ -19,24 +19,33 @@ void ordenarVetor(int* vetor, int tamanho){
     }
 }*/
 
-//Bubble Sort adaptado para ordenar um vetor de alimentos em ordem alfabética pela descrição
-void ordenarAlimentosPorDescricao(Alimento* vetor, int tamanho){
-    for (int i = 0; i < tamanho - 1; i++) {
-        for (int j = 0; j < tamanho - i - 1; j++) {
-            //strcmp para comparar descrições e descobrir se está em ordem alfabética
-            if (strcmp(vetor[j].descricao, vetor[j + 1].descricao) > 0) {
-                Alimento temp = vetor[j];
-                vetor[j] = vetor[j + 1];
-                vetor[j + 1] = temp;
-            }
-        }
-    }
+int compararPorNumero(Alimento a, Alimento b) {
+    return a.numero > b.numero;
+}
+int compararPorDescricao(Alimento a, Alimento b) {
+    return strcmp(a.descricao, b.descricao) > 0;
+}
+int compararPorUmidade(Alimento a, Alimento b) {
+    return a.umidade > b.umidade;
+}
+int compararPorEnergia(Alimento a, Alimento b) {
+    return a.energia > b.energia;
+}
+int compararPorProteina(Alimento a, Alimento b) {
+    return a.proteina > b.proteina;
+}
+int compararPorCarboidrato(Alimento a, Alimento b) {
+    return a.carboidrato > b.carboidrato;
+}
+int compararPorCategoria(Alimento a, Alimento b) {
+    return a.categoria > b.categoria;
 }
 
-void ordenarAlimentosPorEnergia(Alimento* vetor, int tamanho) {
+//Bubble Sort genérico adaptado para ordenar um vetor de alimentos com base em algum campo decidido pelo usuário
+void ordenarAlimentos(Alimento* vetor, int tamanho, ComparadorAtributos comparar) {
     for (int i = 0; i < tamanho - 1; i++) {
         for (int j = 0; j < tamanho - i - 1; j++) {
-            if (vetor[j].energia > vetor[j + 1].energia) {
+            if (comparar(vetor[j], vetor[j + 1])){
                 Alimento temp = vetor[j];
                 vetor[j] = vetor[j + 1];
                 vetor[j + 1] = temp;
