@@ -4,7 +4,7 @@
 
 void mostrarAlimentos(Alimento vetor[], int tamanho);
 void listarCategorias();
-void listarAlimentoOrdemCrescentePorDescricao(Categoria c);
+void listarAlimentosOrdemAlfabetica(Categoria c);
 extern int qntAlimentos;
 extern Alimento vetorAlimentos[];
 Categoria stringParaCategoria(char *texto);

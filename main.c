@@ -69,6 +69,7 @@ int main(){
     }
 
     //testes
-    listarAlimentoOrdemCrescentePorDescricao(CARNES);
+    listarAlimentosOrdemAlfabetica(GORDURAS);
+
     return 0;
 }

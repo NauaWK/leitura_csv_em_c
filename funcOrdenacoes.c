@@ -1,20 +1,34 @@
+#include <string.h>
 #include "funcOrdenacoes.h"
+#include "alimento.h"
 
-//função de ordenação (ordem crescente) -> 'Bubble Sort'
-int* ordenarVetor(int* vetor, int tamanho){
-
-    //loop externo para controlar número de vezes que percorre o vetor (diminui número de iterações)
+//função de ordenação (ordem crescente) por Bubble Sort
+void ordenarVetor(int* vetor, int tamanho){
+    //loop externo para controlar número de vezes que percorre o vetor (diminui número de iterações do loop interno a cada passo)
     for(int i = 0; i < tamanho - 1; i++){
-        //loop interno para verificar cada par de valores
+        //loop interno para verificar cada par de valores adjacentes
         for(int j = 0; j < tamanho - i - 1; j++){
             //verifica se valor esquerdo > direito
             if(vetor[j] > vetor[j + 1]){
-                //inversão de valores
+                //inversão de valores             
                 int temp = vetor[j];
                 vetor[j] = vetor[j + 1];
                 vetor[j + 1] = temp;
             }
         }
     }
-    return vetor;
+}
+
+//Bubble Sort adaptado para ordenar um vetor de alimentos em ordem alfabética pela descrição de cada um
+void ordenarAlimentosPorDescricao(Alimento* vetor, int tamanho){
+    for (int i = 0; i < tamanho - 1; i++) {
+        for (int j = 0; j < tamanho - i - 1; j++) {
+            //strcmp para comparar descrições e descobrir se está em ordem alfabética
+            if (strcmp(vetor[j].descricao, vetor[j + 1].descricao) > 0) {
+                Alimento temp = vetor[j];
+                vetor[j] = vetor[j + 1];
+                vetor[j + 1] = temp;
+            }
+        }
+    }
 }

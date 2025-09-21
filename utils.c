@@ -91,57 +91,29 @@ void listarCategorias(){
 }
 
 //função para armazenar os alimentos de uma categoria X fornecida e exibir esses alimentos em ordem alfabética pelo campo "descrição"
-void listarAlimentoOrdemCrescentePorDescricao(Categoria categoriaSelecionada) {
+void listarAlimentosOrdemAlfabetica (Categoria categoriaSelecionada) {  
     if (!verificarCategoria(categoriaSelecionada) || qntAlimentos <= 0) return;
 
-    //vetores dinâmicos
+    //vetor dinâmico
     Alimento* alimentosFiltrados = NULL;
-    int* letrasUnicas = NULL;
+    int totalAlimentosCategoriaX = 0;
 
-    int totalAlimentos = 0;
-    int totalLetras = 0;
-
-    //filtra alimentos da categoria fornecida e coleta letras únicas
+    //filtra alimentos da categoria fornecida
     for (int i = 0; i < qntAlimentos; i++) {
         if (vetorAlimentos[i].categoria == categoriaSelecionada) {
-
-            //adiciona alimento ao vetor filtrado
-            totalAlimentos++;
-            alimentosFiltrados = realloc(alimentosFiltrados, totalAlimentos * sizeof(Alimento));
-            alimentosFiltrados[totalAlimentos - 1] = vetorAlimentos[i];
-
-            //verifica se a letra já foi registrada
-            char letraAtual = vetorAlimentos[i].descricao[0];
-            int jaExiste = 0;
-            for (int j = 0; j < totalLetras; j++) {
-                if (letrasUnicas[j] == letraAtual) {
-                    jaExiste = 1;
-                    break;
-                }
-            }
-            if (!jaExiste) {
-                totalLetras++;
-                letrasUnicas = realloc(letrasUnicas, totalLetras * sizeof(int));
-                letrasUnicas[totalLetras - 1] = letraAtual;
-            }
+            totalAlimentosCategoriaX++;
+            alimentosFiltrados = realloc(alimentosFiltrados, totalAlimentosCategoriaX * sizeof(Alimento));
+            alimentosFiltrados[totalAlimentosCategoriaX - 1] = vetorAlimentos[i];
         }
     }
+    
+    ordenarAlimentosPorDescricao(alimentosFiltrados, totalAlimentosCategoriaX);
 
-    //chamada da função para ordenação das letras
-    int* letrasOrdenadas = ordenarVetor(letrasUnicas, totalLetras);
-
-    //exibe alimentos em ordem alfabética pela descrição
-    for (int i = 0; i < totalLetras; i++) {
-        for (int j = 0; j < totalAlimentos; j++) {
-            if (alimentosFiltrados[j].descricao[0] == letrasOrdenadas[i]) {
-                mostrarAlimento(alimentosFiltrados[j]);
-            }
-        }
+    //exibe alimentos
+    for (int i = 0; i < totalAlimentosCategoriaX; i++) {
+        mostrarAlimento(alimentosFiltrados[i]);
     }
-
-    //liberação de memória dos vetores alocados
+    //liberação de memória do vetor alocado
     free(alimentosFiltrados);
-    free(letrasUnicas);
-    free(letrasOrdenadas);
 }
 
